@@ -1,18 +1,79 @@
+/* Reset + Base */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Buttons */
 .controls {
-    margin-bottom: 10px;
-  }
-  
-  button {
-    margin: 5px;
-    padding: 6px 10px;
-  }
-  
-  ul {
-    padding: 0;
-  }
-  
-  li {
-    list-style: none;
-    padding: 6px;
-    border-bottom: 1px solid #ddd;
-  }
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* List */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Card style */
+li {
+  list-style: none;
+  background: white;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+}
+
+/* Title text */
+li strong {
+  display: block;
+  font-size: 15px;
+  color: #111;
+}
+
+/* Body text */
+li small {
+  color: #555;
+  font-size: 13px;
+}
