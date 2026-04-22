@@ -16,20 +16,20 @@ export class LRUCache<K, V> {
     }
   
     set(key: K, value: V): void {
-      if (this.cache.has(key)) {
-        this.cache.delete(key);
+        if (this.cache.has(key)) {
+          this.cache.delete(key);
+        }
+      
+        if (this.cache.size >= this.capacity) {
+          const iterator = this.cache.keys().next();
+          if (!iterator.done) {
+            const oldestKey = iterator.value;
+            console.log('LRU EVICT:', oldestKey);
+            this.cache.delete(oldestKey);
+          }
+        }
+      
+        this.cache.set(key, value);
+        console.log('CACHE STATE:', Array.from(this.cache.keys()));
       }
-  
-      // Evict least recently used
-      if (this.cache.size >= this.capacity) {
-        const oldestKey = this.cache.keys().next().value;
-        this.cache.delete(oldestKey);
-      }
-  
-      this.cache.set(key, value);
-    }
-  
-    has(key: K): boolean {
-      return this.cache.has(key);
-    }
   }
